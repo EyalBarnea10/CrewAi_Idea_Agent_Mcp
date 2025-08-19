@@ -2,10 +2,10 @@ import os
 from crewai import Agent, Task, Crew,Process
 from crewai_tools import MCPServerAdapter
 from mcp import StdioServerParameters
- 
-# Add your OpenAI API key and model name in environment variables
-os.environ["OPENAI_API_KEY"] = "your-api-key-here"
-os.environ["OPENAI_MODEL_NAME"] ="gpt-3.5-turbo"
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 server_params = StdioServerParameters(
     command="python",
